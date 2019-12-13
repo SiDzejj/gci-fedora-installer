@@ -1,4 +1,5 @@
 from os import listdir
+import os
 # from os.path import isfile, join
 # from main import DIR
 
@@ -18,6 +19,18 @@ def filter_sd(in_list):
     else:
         return False
 
+
+chosen_disk = "sdb"
+
+
+bus_check_command = "udevadm info --query=all --name={} | grep ID_BUS".format(chosen_disk)
+
+disk_bus = os.system(bus_check_command)
+
+if disk_bus == "ID_BUS=usb":
+    bus_correct = True
+else:
+    bus_correct = False
 
 filtered_list = filter(filter_sd, onlyfiles)
 
