@@ -1,6 +1,5 @@
 import os
-import getpass
-from os import listdir
+
 root_dir = os.path.abspath(os.curdir)
 
 

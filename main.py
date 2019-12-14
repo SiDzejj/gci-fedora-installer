@@ -2,7 +2,7 @@ import os
 import urls
 from downloader import download_iso, verify_checksum
 from installer import flash_iso
-from filecheck import filter_sdx, check_disk, get_drive_list
+from filecheck import check_disk, get_drive_list
 
 
 while True:
